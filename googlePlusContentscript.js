@@ -27,9 +27,9 @@ chrome.extension.sendRequest({method: "getMeetupEventInfo"}, function(response) 
       
       var divs=document.getElementsByTagName('div');
       for(i in divs){
-      console.log(i+' '+divs[i].id +' ' +divs[i].innerHTML);
+        //console.log(i+' '+divs[i].id +' ' +divs[i].innerHTML);
         if(divs[i].innerHTML == 'Details (optional)'){
-          console.log(i+'=MATCH');
+          //console.log(i+'=MATCH');
   		  divs[i].innerHTML=response.meetupEventDescription; //This is not working
   		  //divs[i+1].innerHTML=response.meetupEventDescription;
   		  

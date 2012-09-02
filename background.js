@@ -13,12 +13,6 @@ function done(data){
 
 function tabCreated(data){
   console.log('tabCreated');
-   
-  var finishedInterval = setTimeout(function() {
-    chrome.extension.sendRequest("addTitle", function(response) {
-      console.log("response:", response);
-    });
-  });
 }
   
 
@@ -29,8 +23,7 @@ function onRequest(request, sender, sendResponse) {
     console.log('in meetup google+ request='+request);
     meetupEventInfo=request;
        
-    chrome.tabs.create({url: 'https://plus.google.com/events','active':true}, tabCreated);
-    
+    chrome.tabs.create({url: 'https://plus.google.com/events','active':true}, tabCreated);   
   }
 
   sendResponse({});
